@@ -1,0 +1,7 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "no-empty": [true, "allow-empty-catch", "allow-empty-functions"],
+    "no-console": false
+  }
+}
