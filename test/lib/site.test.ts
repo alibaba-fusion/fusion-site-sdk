@@ -66,3 +66,13 @@ test("throw error when add materials to unauthor site", async () => {
         assert(error.name === "UnauthorizeError");
     }
 });
+
+test("throw error when add non-existing material", async () => {
+    const site = new Site(instance);
+    try {
+        await site.addScaffolds(siteId, ["@ic-scaffold@2.0.5"]);
+        assert(false, "should throw error but not");
+    } catch (error) {
+        assert(error.name === "ResponseFailError");
+    }
+});

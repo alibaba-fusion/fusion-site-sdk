@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import { Env } from "../type";
-import {UnauthorizeError} from "./error";
+import {ResponseFailError, UnauthorizeError} from "./error";
 import getUrl from "./url";
 
 export default function createInstance(token: string, env?: Env) {
@@ -20,10 +20,13 @@ export default function createInstance(token: string, env?: Env) {
         return Promise.reject(error);
     });
     instance.interceptors.response.use(function(response) {
-        // Do something with response data
+        if (response.status === 200 && !response.data.success) {
+            const err = new ResponseFailError();
+            err.response = response;
+            return Promise.reject(err);
+        }
         return response;
     }, function(error) {
-        // Do something with response error
         const res = error.response;
         if (res.status === 401 || res.status === 403 ) {
             const err = new UnauthorizeError();

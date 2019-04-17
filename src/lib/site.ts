@@ -16,11 +16,6 @@ class Site extends BaseHttpClient {
         const res = await this.client.patch(url, materials);
         debug("%o", res);
         const data = res.data as IFusionHttpResponse;
-        if (!data.success) {
-            const err = new Error("fail to get sites");
-            (err as any).response = res;
-            throw err;
-        }
         return data;
     }
 
