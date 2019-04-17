@@ -7,11 +7,11 @@ import getUrl from "./url";
 
 let instance: AxiosInstance = axios.create();
 
-function createInstance(token: string, env?: Env) {
+export function createInstance(token: string, env?: Env) {
     const baseURL = getUrl(env);
     instance = axios.create({
         baseURL,
-        headers: { "x-auth-token": token },
+        headers: { "x-auth-token": token, "content-type": "application/json" },
     });
     instance.interceptors.request.use(function(config) {
         // Do something before request is sent

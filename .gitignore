@@ -3,3 +3,4 @@ package-lock.json
 .rpt2_cache/
 build/
 test/token.json
+coverage

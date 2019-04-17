@@ -9,9 +9,10 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "lint": "tslint src/*.ts src/**/*.ts --fix",
+    "lint": "tslint src/*.ts src/**/*.ts test/*.ts --fix",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "cov": "jest --coverage"
   },
   "author": "",
   "license": "MIT",
