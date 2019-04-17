@@ -1,0 +1,1 @@
+import getAioxs from "./http";
