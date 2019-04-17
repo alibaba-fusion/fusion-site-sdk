@@ -4,23 +4,15 @@ import * as axios from "../src/lib/http";
 import getUrl from "../src/lib/url";
 import {Env} from "../src/type";
 
-// tslint:disable-next-line
-const tokenjson = require("./token.json");
-const token = (tokenjson.token) as string|undefined;
-
-test("get token", function() {
-    assert(token);
-});
-
 test("create prod axios", function() {
-    axios.createInstance(token);
+    axios.createInstance("123");
     const instance = axios.default();
-    assert(instance.defaults.headers["x-auth-token"] === token);
+    assert(instance.defaults.headers["x-auth-token"] === "123");
     assert(instance.defaults.baseURL = getUrl());
 });
 
 test("create local axios", function() {
-    axios.createInstance(token, Env.local);
+    axios.createInstance("123", Env.local);
     const instance = axios.default();
     assert(instance.defaults.baseURL = getUrl(Env.local));
 });
