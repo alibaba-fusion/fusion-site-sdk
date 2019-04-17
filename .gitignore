@@ -1,8 +1,4 @@
 node_modules/
 package-lock.json
 .rpt2_cache/
-*.js
-!babel.config.js
-!jest.config.js
-*.d.ts
-lib/
+dist/
