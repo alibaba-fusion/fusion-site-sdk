@@ -26,12 +26,12 @@ test("create local axios", function() {
 });
 
 test("throw error", async function() {
-    axios.createInstance('');
+    axios.createInstance("");
     const instance = axios.default();
     try {
-        await instance.get('/api/v1/mysites');
-        assert(true, 'should throw error but not');
+        await instance.get("/api/v1/mysites");
+        assert(true, "should throw error but not");
     } catch (error) {
-        assert(error.name === 'UnauthorizeError');
+        assert(error.name === "UnauthorizeError");
     }
 });
