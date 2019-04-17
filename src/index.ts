@@ -1,16 +1,20 @@
 import { Env, IClientConstructorProps } from "./type";
 
 export class FusionSiteClient {
-    public env: Env;
-    private token: string;
+
+    get env() {
+        return this._env;
+    }
+    public token: string;
+    private _env: Env;
 
     constructor(props: string | IClientConstructorProps) {
         if (typeof props === "string") {
             this.token = props;
-            this.env = Env.prod;
+            this._env = Env.prod;
         } else {
             this.token = props.token;
-            this.env = props.env || Env.prod;
+            this._env = props.env || Env.prod;
         }
     }
 
@@ -20,9 +24,5 @@ export class FusionSiteClient {
 
     public getToken() {
         return this.token;
-    }
-
-    public getEnv() {
-        return this.env;
     }
 }

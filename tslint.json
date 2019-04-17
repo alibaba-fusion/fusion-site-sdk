@@ -2,6 +2,7 @@
   "extends": "tslint:recommended",
   "rules": {
     "no-empty": [true, "allow-empty-catch", "allow-empty-functions"],
-    "no-console": false
+    "no-console": false,
+    "variable-name": [true, "check-format", "allow-leading-underscore", "allow-trailing-underscore"]
   }
 }
