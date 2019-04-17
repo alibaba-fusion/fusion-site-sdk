@@ -40,6 +40,7 @@ export interface IFusionSite {
 export interface IFusionHttpResponse {
     success: boolean;
     data: any;
+    message?: string; 
 }
 
 export interface ISiteMaterialsPatch {

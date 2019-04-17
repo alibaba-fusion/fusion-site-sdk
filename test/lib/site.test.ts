@@ -12,10 +12,6 @@ beforeAll(() => {
     instance = createInstance(token);
 });
 
-test("token exits", () => {
-    assert(token);
-});
-
 test("add block", async () => {
     const site = new Site(instance);
     const res = await site.addBlocks(siteId, ["@icedesign/user-landing-block@2.0.0"]);

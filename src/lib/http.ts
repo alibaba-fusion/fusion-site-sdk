@@ -1,4 +1,6 @@
-import axios, { AxiosInstance } from "axios";
+import axios from "axios";
+import Debug from "debug";
+const debug = Debug("fusion-sdk:http");
 import { Env } from "../type";
 import {ResponseFailError, UnauthorizeError} from "./error";
 import getUrl from "./url";
@@ -21,12 +23,14 @@ export default function createInstance(token: string, env?: Env) {
     });
     instance.interceptors.response.use(function(response) {
         if (response.status === 200 && !response.data.success) {
+            debug('%o', response);
             const err = new ResponseFailError();
             err.response = response;
             return Promise.reject(err);
         }
         return response;
     }, function(error) {
+        debug('%o', error);
         const res = error.response;
         if (res.status === 401 || res.status === 403 ) {
             const err = new UnauthorizeError();
