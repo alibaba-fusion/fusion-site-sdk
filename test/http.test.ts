@@ -24,3 +24,14 @@ test("create local axios", function() {
     const instance = axios.default();
     assert(instance.defaults.baseURL = getUrl(Env.local));
 });
+
+test("throw error", async function() {
+    axios.createInstance('');
+    const instance = axios.default();
+    try {
+        await instance.get('/api/v1/mysites');
+        assert(true, 'should throw error but not');
+    } catch (error) {
+        assert(error.name === 'UnauthorizeError');
+    }
+});

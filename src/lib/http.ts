@@ -21,7 +21,7 @@ export function createInstance(token: string, env?: Env) {
         // Do something with request error
         return Promise.reject(error);
     });
-    axios.interceptors.response.use(function(response) {
+    instance.interceptors.response.use(function(response) {
         // Do something with response data
         return response;
     }, function(error) {
@@ -30,7 +30,7 @@ export function createInstance(token: string, env?: Env) {
         if (res.status === 401 || res.status === 403 ) {
             const err = new UnauthorizeError();
             err.response = res;
-            return Promise.reject(new UnauthorizeError());
+            return Promise.reject(err);
         }
         return Promise.reject(error);
     });

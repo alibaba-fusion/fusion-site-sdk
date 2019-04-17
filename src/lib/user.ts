@@ -8,7 +8,9 @@ async function getSites(): Promise<IFusionSite[]> {
     const url = "/api/v1/mysites";
     const res = await getAioxs().get(url);
     if (!res.data.success) {
-        throw new Error("fail to get sites");
+        const err = new Error("fail to get sites");
+        (err as any).response = res;
+        throw err;
     }
     debug("%o", res.data.data);
     return res.data.data as IFusionSite[];
