@@ -1,6 +1,6 @@
 {
   "name": "@alifd/fusion-site-sdk",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "build/index.js",
   "files": [
@@ -11,7 +11,7 @@
     "build": "tsc",
     "dev": "tsc -w",
     "lint": "tslint src/*.ts src/**/*.ts test/*.ts test/**/*.ts --fix",
-    "publishOnly": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "jest",
     "cov": "jest --coverage"
   },
