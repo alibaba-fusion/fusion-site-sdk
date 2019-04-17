@@ -11,7 +11,7 @@
     "dev": "tsc -w",
     "lint": "tslint src/*.ts src/**/*.ts --fix",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "npm run build && jest"
   },
   "author": "",
   "license": "MIT",
