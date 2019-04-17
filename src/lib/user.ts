@@ -2,11 +2,11 @@
 import Debug from "debug";
 const debug = Debug("fusion-sdk:user");
 import {IFusionSite} from "../type";
-import getAioxs from "./http";
+import { AxiosInstance } from "axios";
 
-async function getSites(): Promise<IFusionSite[]> {
+async function getSites(instance: AxiosInstance): Promise<IFusionSite[]> {
     const url = "/api/v1/mysites";
-    const res = await getAioxs().get(url);
+    const res = await instance.get(url);
     if (!res.data.success) {
         const err = new Error("fail to get sites");
         (err as any).response = res;

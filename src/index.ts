@@ -1,7 +1,7 @@
 import { Env, IClientConstructorProps } from "./type";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
-export class FusionSiteClient {
-
+export default class FusionSiteClient {
+    static ENV = Env;
     get env() {
         return this._env;
     }

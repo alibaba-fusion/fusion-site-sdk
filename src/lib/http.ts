@@ -3,11 +3,9 @@ import { Env } from "../type";
 import {UnauthorizeError} from "./error";
 import getUrl from "./url";
 
-let instance: AxiosInstance = axios.create();
-
-export function createInstance(token: string, env?: Env) {
+export default function createInstance(token: string, env?: Env) {
     const baseURL = getUrl(env);
-    instance = axios.create({
+    const instance = axios.create({
         baseURL,
         headers: { "x-auth-token": token, "content-type": "application/json" },
     });
@@ -34,8 +32,6 @@ export function createInstance(token: string, env?: Env) {
         }
         return Promise.reject(error);
     });
-}
-
-export default function getAxios() {
     return instance;
 }
+
