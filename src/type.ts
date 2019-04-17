@@ -36,3 +36,14 @@ export interface IFusionSite {
     gmt_modified: string;
     clone_tpl_type: number;
 }
+
+export interface IFusionHttpResponse {
+    success: boolean;
+    data: any;
+}
+
+export interface ISiteMaterialsPatch {
+    blocks: string[];
+    scaffolds: string[];
+    components: string[];
+}

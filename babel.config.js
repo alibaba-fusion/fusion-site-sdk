@@ -4,4 +4,5 @@ module.exports = {
         '@babel/preset-typescript',
         'power-assert',
     ],
+    plugins: ["@babel/plugin-proposal-class-properties"],
 };

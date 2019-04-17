@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "lint": "tslint src/*.ts src/**/*.ts test/*.ts --fix",
+    "lint": "tslint src/*.ts src/**/*.ts test/*.ts test/**/*.ts --fix",
     "prepare": "npm run build",
     "test": "jest",
     "cov": "jest --coverage"
@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-typescript": "^7.3.3",
     "@types/axios": "^0.14.0",

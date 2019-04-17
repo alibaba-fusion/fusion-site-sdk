@@ -18,7 +18,7 @@ test("throw error when token error", async function() {
     const instance = createInstance("");
     try {
         await instance.get("/api/v1/mysites");
-        assert(true, "should throw error but not");
+        assert(false, "should throw error but not");
     } catch (error) {
         assert(error.name === "UnauthorizeError");
     }
