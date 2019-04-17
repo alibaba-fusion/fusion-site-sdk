@@ -1,5 +1,5 @@
 import { from } from "_rxjs@6.4.0@rxjs";
-import * as assert from "power-assert";
+import assert from "power-assert";
 import * as axios from "../src/lib/http";
 import getUrl from "../src/lib/url";
 import {Env} from "../src/type";

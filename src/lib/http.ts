@@ -1,6 +1,4 @@
 import axios, { AxiosInstance } from "axios";
-import Debug from "debug";
-const debug = Debug("fusion-sdk:http");
 import { Env } from "../type";
 import {UnauthorizeError} from "./error";
 import getUrl from "./url";
