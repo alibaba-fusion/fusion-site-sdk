@@ -23,14 +23,14 @@ export default function createInstance(token: string, env?: Env) {
     });
     instance.interceptors.response.use(function(response) {
         if (response.status === 200 && !response.data.success) {
-            debug('%o', response);
+            debug("%o", response);
             const err = new ResponseFailError();
             err.response = response;
             return Promise.reject(err);
         }
         return response;
     }, function(error) {
-        debug('%o', error);
+        debug("%o", error);
         const res = error.response;
         if (res.status === 401 || res.status === 403 ) {
             const err = new UnauthorizeError();

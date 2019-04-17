@@ -42,7 +42,7 @@ test("support add material", async () => {
     const siteId = 16;
     const result = await client.site.addMaterials(siteId, {
         blocks: [],
-        components: ['@icedesign/styled-menu@1.0.0'],
+        components: ["@icedesign/styled-menu@1.0.0"],
         scaffolds: [],
     });
     assert(result.success, result.message);
