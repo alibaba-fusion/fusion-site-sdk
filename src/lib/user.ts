@@ -1,8 +1,8 @@
 
 import Debug from "debug";
 const debug = Debug("fusion-sdk:user");
-import {IFusionSite} from "../type";
 import { AxiosInstance } from "axios";
+import {IFusionSite} from "../type";
 
 async function getSites(instance: AxiosInstance): Promise<IFusionSite[]> {
     const url = "/api/v1/mysites";

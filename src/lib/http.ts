@@ -34,4 +34,3 @@ export default function createInstance(token: string, env?: Env) {
     });
     return instance;
 }
-

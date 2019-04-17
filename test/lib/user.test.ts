@@ -1,8 +1,8 @@
 import assert from "power-assert";
 
+import { AxiosInstance } from "axios";
 import createInstance from "../../src/lib/http";
 import user from "../../src/lib/user";
-import { AxiosInstance } from "axios";
 // tslint:disable-next-line
 const tokenjson = require("../token.json");
 const token = (tokenjson.token) as string|undefined;
