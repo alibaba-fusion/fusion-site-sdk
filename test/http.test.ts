@@ -25,7 +25,7 @@ test("create local axios", function() {
     assert(instance.defaults.baseURL = getUrl(Env.local));
 });
 
-test("throw error", async function() {
+test("throw error when token error", async function() {
     axios.createInstance("");
     const instance = axios.default();
     try {
