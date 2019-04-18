@@ -84,7 +84,7 @@ async () => {
 ```
 
 #### 添加区块、模板、组件
-一下几个方法是对`site.addMaterials`方法的封装,方便调用
+以下几个方法是对`site.addMaterials`方法的封装,方便调用
 
 ```javascript
 async () => {
