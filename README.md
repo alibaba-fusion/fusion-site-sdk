@@ -17,14 +17,17 @@
 const Client = require('@alifd/fusion-site-sdk');
 
 // 使用token 初始化token
-const client = new Client('your token');
+const client = new Client('your token'); 
 
 // 为了方便开发调试 可以让client链接到不同环境
 const client = new Client({
     token: 'your token',
-    env: 'prod', // 全部支持的环境见: https://github.com/alibaba-fusion/fusion-site-sdk/blob/master/src/type.ts
+    env: 'prod',  // 全部支持的环境见: https://github.com/alibaba-fusion/fusion-site-sdk/blob/master/src/type.ts
 });
 ```
+
+### 环境
+默认是外网`prod`, 内网请使用`aliprod`, 不同环境token不通用。
 
 #### 重置token
 如果token过期 可以通过client实例的方法刷心token.
