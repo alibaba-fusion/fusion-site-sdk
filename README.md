@@ -1,7 +1,11 @@
 # Fusion Site SDK
 
 
-# API
+## 安装
+`npm install @alifd/fusion-site-sdk -S`
+
+自带 `.d.ts`文件 支持 Typescript.
+## API
 
 ### 获取Token
 见帮助文档: https://fusion.design/help.html#/dev-create-site
