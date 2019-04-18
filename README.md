@@ -66,6 +66,10 @@ async () => {
 const {site} = client;
 ```
 
+#### siteId
+获取siteId需要先调用获取site的接口
+
+
 #### 添加物料
 ```javascript
 async () => {
