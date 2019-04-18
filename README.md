@@ -70,7 +70,7 @@ const {site} = client;
 ```javascript
 async () => {
     // blocks + components + scaffolds  总数不要超过20,数量太多需要切分 多次调用 
-    const res = await site.addMaterials({
+    const res = await site.addMaterials(siteId, {
         blocks: ['npm包名@精确版本号', '@alifd/test-block@1.2.3'],
         components: ['npm包名@精确版本号', '@alifd/test-comp@1.2.3'],
         scaffolds: ['npm包名@精确版本号', '@alifd/test-scaffold@1.2.3'],
@@ -85,10 +85,10 @@ async () => {
 ```javascript
 async () => {
     // 添加区块, 返回值同 site.addMaterials
-    const res = site.addBlocks(['@alifd/test-block@1.2.3']);
+    const res = site.addBlocks(siteId, ['@alifd/test-block@1.2.3']);
     // 添加组件, 返回值同 site.addMaterials
-    const res = site.addComponents(['@alifd/test-components@1.2.3']);
+    const res = site.addComponents(siteId, ['@alifd/test-components@1.2.3']);
     // 添加模板, 返回值同 site.addMaterials
-    const res = site.addScaffolds(['@alifd/test-scaffolds@1.2.3']);
+    const res = site.addScaffolds(siteId, ['@alifd/test-scaffolds@1.2.3']);
 }
 ```
