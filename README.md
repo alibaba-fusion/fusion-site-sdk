@@ -30,7 +30,7 @@ const client = new Client({
 默认是外网`prod`, 内网请使用`aliprod`, 不同环境token不通用。
 
 #### 重置token
-如果token过期 可以通过client实例的方法刷心token.
+如果token过期 可以通过client实例的方法刷新token.
 
 ```javascript
 const client = new Client('your token');
