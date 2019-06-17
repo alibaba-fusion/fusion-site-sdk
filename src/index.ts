@@ -3,7 +3,7 @@ import Site from "./lib/site";
 import User from "./lib/user";
 import { Env, IClientConstructorProps } from "./type";
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 export default class FusionSiteClient {
     get env() {
         return this._env;
