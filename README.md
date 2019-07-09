@@ -46,10 +46,18 @@ client.env; // env
 ```
 
 
-### user集合
+### user方法群
 ```javascript
 const user = client.user;
 ```
+#### 校验token是否有效
+```javascript
+async () => {
+    const isValid = await user.checkToken();
+    // true 代表有效  false 代表 无效或者网络不通
+}
+```
+
 #### 获取用户名下的站点
 ```javascript
 async () => {
