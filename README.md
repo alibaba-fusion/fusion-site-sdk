@@ -14,7 +14,9 @@
 
 #### 初始化
 ```javascript
-const Client = require('@alifd/fusion-site-sdk');
+import Client from '@alifd/fusion-site-sdk';
+// 或
+const Client = require('@alifd/fusion-site-sdk').default;
 
 // 使用token 初始化token
 const client = new Client('your token'); 
