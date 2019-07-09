@@ -1,6 +1,6 @@
 {
   "name": "@alifd/fusion-site-sdk",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "fusion site open api node sdk",
   "main": "build/index.js",
   "files": [

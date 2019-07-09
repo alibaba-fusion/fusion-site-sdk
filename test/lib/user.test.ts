@@ -17,3 +17,9 @@ test("get user sites", async () => {
     assert(res.length > 0);
     assert(res[0].id > 0);
 });
+
+test.only("check user token", async () => {
+    const user = new User(instance);
+    const res = await user.checkToken();
+    assert(res);
+});

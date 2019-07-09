@@ -22,12 +22,17 @@ export default function createInstance(token: string, env?: Env) {
         return Promise.reject(error);
     });
     instance.interceptors.response.use(function(response) {
-        if (response.status === 200 && !response.data.success) {
-            debug("%o", response);
-            const err = new ResponseFailError();
-            err.response = response;
+        const err = new ResponseFailError();
+        err.response = response;
+
+        if (response.status !== 200) {
+            // 非200 报错
+            return Promise.reject(err);
+        } else if (response.request.method !== "HEAD" && !response.data.success) {
+            // 非HEAD方法 但是返回体里面没有内容 报错
             return Promise.reject(err);
         }
+
         return response;
     }, function(error) {
         debug("%o", error);
